@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watsons Trading Rate Card 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FFFFFF;
+      color: #333333;
+    }
+    
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      background-color: #FAFAFA;
+      border-right: 1px solid #E8E8E8;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .logo {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #00A651;
+      color: #FFFFFF;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #00A651;
+    }
+    
+    .nav {
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: none;
+      background-color: transparent;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #555555;
+      text-align: left;
+      transition: all 0.2s ease;
+      width: 100%;
+      font-family: inherit;
+    }
+    
+    .nav-item:hover {
+      background-color: #F0F0F0;
+    }
+    
+    .nav-item.active {
+      background-color: #E6F5EC;
+      color: #00A651;
+      font-weight: 600;
+    }
+    
+    .nav-icon {
+      font-size: 18px;
+    }
+    
+    .item-count {
+      margin-left: auto;
+      background-color: #E8E8E8;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .nav-item.active .item-count {
+      background-color: #00A651;
+      color: white;
+    }
+    
+    .sidebar-footer {
+      padding: 20px 24px;
+      border-top: 1px solid #E8E8E8;
+      background-color: #F5F5F5;
+    }
+    
+    .footer-text {
+      font-size: 12px;
+      color: #00A651;
+      font-weight: 600;
+    }
+    
+    .footer-subtext {
+      font-size: 11px;
+      color: #888888;
+      margin-top: 4px;
+    }
+    
+    /* Main Content */
+    .main {
+      flex: 1;
+      margin-left: 280px;
+    }
+    
+    .header {
+      padding: 24px 32px;
+      border-bottom: 1px solid #E8E8E8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      font-size: 16px;
+      opacity: 0.5;
+    }
+    
+    .search-input {
+      padding: 12px 40px 12px 44px;
+      border: 1px solid #E0E0E0;
+      border-radius: 10px;
+      font-size: 14px;
+      width: 280px;
+      outline: none;
+      transition: all 0.2s ease;
+      background-color: #FAFAFA;
+      font-family: inherit;
+    }
+    
+    .search-input:focus {
+      border-color: #00A651;
+      background-color: #FFFFFF;
+    }
+    
+    .clear-search {
+      position: absolute;
+      right: 12px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #888888;
+      padding: 4px;
+      display: none;
+    }
+    
+    .clear-search.visible {
+      display: block;
+    }
+    
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 16px;
+      background-color: #F5F5F5;
+      border-radius: 12px;
+    }
+    
+    .toggle-label {
+      font-size: 13px;
+      color: #888888;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .toggle-label.active {
+      color: #00A651;
+      font-weight: 600;
+    }
+    
+    .toggle {
+      width: 48px;
+      height: 26px;
+      background-color: #00A651;
+      border: none;
+      border-radius: 13px;
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.2s ease;
+    }
+    
+    .toggle-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .toggle.major .toggle-thumb {
+      transform: translateX(22px);
+    }
+    
+    /* Dashboard */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 24px 32px;
+      background-color: #FAFAFA;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    
+    .card {
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid #F0F0F0;
+    }
+    
+    .card-icon {
+      font-size: 28px;
+      padding: 12px;
+      background-color: #E6F5EC;
+      border-radius: 12px;
+    }
+    
+    .card-label {
+      font-size: 13px;
+      color: #888888;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    
+    .card-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #00A651;
+    }
+    
+    .card-subtext {
+      font-size: 11px;
+      color: #AAAAAA;
+      margin-top: 4px;
+    }
+    
+    /* Search Results */
+    .search-results {
+      padding: 12px 32px;
+      background-color: #FFF9E6;
+      border-bottom: 1px solid #FFE599;
+      font-size: 14px;
+      color: #8B6914;
+      display: none;
+    }
+    
+    .search-results.visible {
+      display: block;
+    }
+    
+    /* Content */
+    .content {
+      padding: 24px 32px;
+    }
+    
+    .category-section {
+      margin-bottom: 32px;
+      display: none;
+    }
+    
+    .category-section.visible {
+      display: block;
+    }
+    
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .category-icon {
+      font-size: 24px;
+      padding: 8px;
+      background-color: #E6F5EC;
+      border-radius: 10px;
+    }
+    
+    .category-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+    
+    .category-count {
+      font-size: 12px;
+      color: #888888;
+      background-color: #F0F0F0;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    
+    .table-container {
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      border: 1px solid #E8E8E8;
+      overflow: hidden;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th {
+      text-align: left;
+      padding: 14px 20px;
+      background-color: #FAFAFA;
+      font-size: 12px;
+      font-weight: 600;
+      color: #666666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #E8E8E8;
+    }
+    
+    th.price {
+      text-align: right;
+      width: 180px;
+    }
+    
+    th.unit {
+      width: 180px;
+    }
+    
+    tr.item-row {
+      border-bottom: 1px solid #F0F0F0;
+      transition: background-color 0.15s ease;
+      cursor: pointer;
+    }
+    
+    tr.item-row:hover {
+      background-color: #FAFAFA;
+    }
+    
+    tr.item-row.expanded {
+      background-color: #F8FDF9;
+    }
+    
+    tr:last-child {
+      border-bottom: none;
+    }
+    
+    td {
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #333333;
+      vertical-align: top;
+    }
+    
+    td.price {
+      text-align: right;
+      font-weight: 600;
+      color: #00A651;
+      font-size: 15px;
+    }
+    
+    td.unit {
+      color: #888888;
+      font-size: 13px;
+    }
+    
+    .item-name-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .expand-arrow {
+      color: #00A651;
+      font-size: 10px;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    
+    .expand-arrow.expanded {
+      transform: rotate(90deg);
+    }
+    
+    .item-name {
+      font-weight: 500;
+    }
+    
+    .item-note {
+      display: block;
+      font-size: 12px;
+      color: #999999;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+    
+    .item-definition {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      background-color: #F0FAF4;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #555555;
+      border-left: 3px solid #00A651;
+    }
+    
+    .item-definition.visible {
+      display: block;
+    }
+    
+    /* No Results */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      display: none;
+    }
+    
+    .no-results.visible {
+      display: block;
+    }
+    
+    .no-results-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    .no-results-text {
+      font-size: 16px;
+      color: #888888;
+      margin-bottom: 20px;
+    }
+    
+    .clear-button {
+      padding: 12px 24px;
+      background-color: #00A651;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background-color 0.2s;
+    }
+    
+    .clear-button:hover {
+      background-color: #008c44;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 220px;
+      }
+      .main {
+        margin-left: 220px;
+      }
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .header-right {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">W</span>
+        <span class="logo-text">Watsons</span>
+      </div>
+      
+      <nav class="nav" id="nav">
+        <!-- Navigation items will be inserted here -->
+      </nav>
+      
+      <div class="sidebar-footer">
+        <p class="footer-text">Effective from 1st Jan 2026</p>
+        <p class="footer-subtext">Excludes GST</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <h1 class="title">Watsons Trading Rate Card 2026</h1>
+        </div>
+        
+        <div class="header-right">
+          <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search all items...">
+            <button class="clear-search" id="clearSearch">✕</button>
+          </div>
+          
+          <div class="toggle-container">
+            <span class="toggle-label active" id="standardLabel">Standard</span>
+            <button class="toggle" id="pricingToggle">
+              <span class="toggle-thumb"></span>
+            </button>
+            <span class="toggle-label" id="majorLabel">Major Month</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard -->
+      <div class="dashboard">
+        <div class="card">
+          <div class="card-icon">📁</div>
+          <div class="card-content">
+            <p class="card-label">Total Categories</p>
+            <p class="card-value" id="totalCategories">11</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <div class="card-content">
+            <p class="card-label">Total Items</p>
+            <p class="card-value" id="totalItems">60</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <div class="card-content">
+            <p class="card-label">Highest Price</p>
+            <p class="card-value" id="highestPrice">RM 700,000</p>
+            <p class="card-subtext" id="highestItem">MPP 1</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">📉</div>
+          <div class="card-content">
+            <p class="card-label">Lowest Price</p>
+            <p class="card-value" id="lowestPrice">RM 0.40</p>
+            <p class="card-subtext" id="lowestItem">SMS Blast</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Results -->
+      <div class="search-results" id="searchResults">
+        🔍 Showing results for "<strong id="searchTerm"></strong>" — <span id="resultCount">0</span> items found
+      </div>
+
+      <!-- Content -->
+      <div class="content" id="content">
+        <!-- Categories will be inserted here -->
+      </div>
+      
+      <!-- No Results -->
+      <div class="no-results" id="noResults">
+        <p class="no-results-icon">🔍</p>
+        <p class="no-results-text" id="noResultsText">No items found</p>
+        <button class="clear-button" id="clearButton">Clear Search</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Data with definitions
+    const categories = [
+      {
+        id: 'standard',
+        name: 'Standard Charges',
+        icon: '📋',
+        items: [
+          { name: 'MPP 1', standard: 680000, major: 700000, unit: '', definition: 'The Tier-1 flagship sponsorship for the entire month\'s storewide theme (e.g., "Gaya Raya"). Includes maximum visibility across in-store, print, and digital channels.' },
+          { name: 'MPP 2', standard: 650000, major: 670000, unit: '', definition: 'The Tier-2 sponsorship for the monthly theme. Offers high visibility similar to MPP 1 but with slightly reduced asset allocation or placement priority.' },
+          { name: 'Sidekick 1 (w/ TMP)', standard: 380000, major: 380000, unit: '', definition: 'A vertical wire basket rack hanging on the side of the Gondola End-Cap. Includes "Targeted Member Program" (TMP) support to drive sales from loyalty members.' },
+          { name: 'Sidekick 2 (w/ TMP)', standard: 380000, major: 380000, unit: '', definition: 'Secondary placement for the side-hanging wire rack. Also includes TMP support for member targeting.' },
+          { name: 'Left & Right Opportunity Cashier Counter (2 slot)', standard: 500, major: 500, unit: 'per store', definition: 'Small impulse-buy display units positioned immediately to the left or right of the cashier register to capture customers during checkout.' },
+        ]
+      },
+      {
+        id: 'mailer',
+        name: 'Mailer',
+        icon: '📬',
+        items: [
+          { name: 'Full page', standard: 227500, major: 267800, unit: '', definition: 'A dedicated A4-sized advertisement page in the printed Watsons Catalog, distributed in-store and digitally.' },
+          { name: '1/2 page', standard: 114400, major: 135200, unit: '', definition: 'A half-page advertisement slot in the Watsons Catalog.' },
+          { name: '1/3 page', standard: 78000, major: 93600, unit: '', definition: 'A horizontal or vertical third-page slot in the Watsons Catalog.' },
+          { name: '1/4 page', standard: 58500, major: 65000, unit: '', definition: 'A quarter-page slot in the Watsons Catalog, typically suitable for a single hero product.' },
+          { name: '1 item', standard: 31200, major: 36400, unit: '', definition: 'A standard product listing in the catalog, showing the packshot, price, and a brief description.' },
+          { name: 'Watsons 45+ Club', standard: 31200, major: 36400, unit: '', definition: 'Targeted advertising specifically aimed at the Watsons "45+ Club" demographic (senior members).' },
+        ]
+      },
+      {
+        id: 'instore-tv',
+        name: 'In-Store TV',
+        icon: '📺',
+        items: [
+          { name: 'In-Store TV (16 Stores) - PCO subject to availability', standard: 576000, major: 576000, unit: '', definition: 'Digital video commercials played on TV screens located in 16 high-traffic flagship stores (e.g., Pavilion, KLCC).', note: 'Shopfront: City Square, 1 Utama, MV Southkey, Central i-city, Pavilion Bukit Jalil, Sunway Pyramid. Horizontal: Cheras Leisure Mall, Sunway Pyramid, IOI City Mall, KLCC, Pavilion Bukit Jalil, Gurney Plaza, KSL Esplanade, Pavilion Damansara Height, Gurney Plaza 2, Mayang Mall' },
+        ]
+      },
+      {
+        id: 'dooh',
+        name: 'Out Of Home (DOOH)',
+        icon: '🏙️',
+        items: [
+          { name: 'DOOH (12 sites venues) - Selected display site in Klang Valley only', standard: 360000, major: 360000, unit: 'per week / location', definition: 'Digital Out-Of-Home advertising on large external screens at 12 selected high-traffic locations in the Klang Valley.' },
+        ]
+      },
+      {
+        id: 'ev-truck',
+        name: 'Electric Vehicle Truck',
+        icon: '🚚',
+        items: [
+          { name: 'EV Quarterly with total 2 truck (on top TTA) - Advertising Wrap for Sustainable Choices in Klang Valley & Penang', standard: 120000, major: 120000, unit: '', definition: 'Full-body advertising wrap on Watsons\' electric delivery trucks, roving in key areas like Klang Valley and Penang for mobile brand visibility.' },
+        ]
+      },
+      {
+        id: 'special',
+        name: 'Special Requirement',
+        icon: '⭐',
+        items: [
+          { name: 'Human Standee', standard: 3000, major: 3000, unit: 'per store', definition: 'A hired promoter or staff member standing in-store to actively sell or demonstrate your product.' },
+          { name: 'Coupon print on receipt', standard: 3300, major: 3450, unit: 'per product / per time', definition: 'A customized discount coupon printed physically on the customer\'s receipt at checkout to encourage a return visit.' },
+          { name: 'eCom Promo Code', standard: 80, major: 80, unit: 'per code creation / per time', definition: 'Creation of a unique digital voucher code (e.g., "BRAND10") for use on the Watsons Online store.' },
+          { name: 'TMP', standard: 85800, major: 89700, unit: '', definition: '"Targeted Member Program" – A data-driven marketing service targeting specific Watsons member segments.' },
+          { name: 'eDM blast (per blast 50k, no report)', standard: 5000, major: 5000, unit: '', definition: 'An Electronic Direct Mail (email) campaign sent to Watsons\' subscriber database (approx. 50k reach).' },
+          { name: 'Telegram', standard: 3000, major: 3000, unit: 'per post/visual', definition: 'A promotional post sent to the official Watsons Malaysia Telegram channel subscribers.' },
+          { name: 'Thread', standard: 3000, major: 3000, unit: 'per post/visual', definition: 'A text/image post on the Watsons Malaysia Threads account (Meta\'s text-based app).' },
+          { name: 'WhatsApp (per blast 10k customer)', standard: 0.50, major: 0.50, unit: 'per WhatsApp Blast', definition: 'A direct WhatsApp message blast sent to a targeted list of 10k customers.' },
+          { name: 'SMS Blast (per blast 10k customer)', standard: 0.40, major: 0.40, unit: 'per customer', definition: 'A direct SMS text message sent to a targeted list of 10k customers.' },
+        ]
+      },
+      {
+        id: 'social',
+        name: 'Social Media',
+        icon: '📱',
+        items: [
+          { name: 'Facebook', standard: 7000, major: 7000, unit: 'per post/visual', definition: 'A standard image or video post on the official Watsons Malaysia Facebook page.' },
+          { name: 'Twitter', standard: 3000, major: 3000, unit: 'per post/visual', definition: 'A promotional tweet on the Watsons Malaysia Twitter/X account.' },
+          { name: 'TikTok Live Stream', standard: 5000, major: 5000, unit: '', definition: 'A dedicated slot during a Watsons official TikTok live selling session.' },
+          { name: 'Instagram post', standard: 7000, major: 7000, unit: 'per post/visual', definition: 'A static image or video post on the Watsons Malaysia Instagram feed.' },
+          { name: 'Instagram story', standard: 5000, major: 5000, unit: 'per post/visual', definition: 'A vertical video or image story on Watsons Instagram (vanishes after 24 hours).' },
+          { name: 'Instagram story highlight', standard: 5000, major: 5000, unit: 'per post/visual', definition: 'An Instagram story that is saved permanently to the Watsons profile highlights for prolonged visibility.' },
+          { name: 'Digital Brand Week Facebook/Instagram', standard: 12000, major: 12000, unit: 'per Week', definition: 'A week-long digital takeover featuring your brand across Facebook or Instagram.' },
+          { name: 'Digital Brand Week Facebook + Instagram', standard: 21600, major: 21600, unit: 'per Week', definition: 'A week-long digital takeover featuring your brand across both Facebook and Instagram.' },
+          { name: 'YouTube Glow TV (on top funding, not include in A&P or BDF)', standard: '48,000 - 60,000', major: '48,000 - 60,000', unit: 'refer buyer for package', isRange: true, definition: 'A feature segment or sponsorship on Watsons\' official YouTube lifestyle show, "Glow TV".' },
+          { name: 'Trending (Exclusive) - Subject to Approval', standard: 6000, major: 6000, unit: 'per product & 50K Ad buy', definition: 'A special "Trending" badge or feature spot for viral products, subject to approval.' },
+        ]
+      },
+      {
+        id: 'display',
+        name: 'Display',
+        icon: '🏪',
+        items: [
+          { name: 'Gondola End (GE) - Header + Top Shelf', standard: 5720, major: 5720, unit: 'per store', definition: 'Rental of the premium End-Cap unit, including the top branding board (Header) and the highest shelf (Eye Level).' },
+          { name: 'Gondola End (GE) - Header + Full Display', standard: 9290, major: 9290, unit: 'per store', definition: 'Rental of the entire End-Cap unit from top to bottom, giving maximum brand dominance.' },
+          { name: 'Gondola End (GE) - Customized', standard: 12580, major: 12580, unit: 'per store', definition: 'A bespoke, non-standard End-Cap structure built specifically for your brand\'s creative requirements.' },
+          { name: 'Mix GE', standard: 500, major: 500, unit: 'per SKU per store', definition: 'A shared Gondola End shelf where your SKU sits alongside other brands.' },
+          { name: 'Promo Top - 1m', standard: 3430, major: 3430, unit: 'per store', definition: 'Also known as a "Block Display." A dedicated 1-meter wide rectangular zone on the main shelf, fully merchandised with your brand.' },
+          { name: 'Promo Top - 0.5m', standard: 1710, major: 1710, unit: 'per store', definition: 'A smaller "Block Display" spanning 0.5 meters on the main shelf.' },
+          { name: 'Standee', standard: 3300, major: 3300, unit: 'per store', definition: 'A freestanding cardboard cutout display placed on the floor area.' },
+          { name: 'Clip Strip', standard: 1580, major: 1580, unit: 'per store', definition: 'A long plastic strip hanging vertically from a shelf edge, holding lightweight impulse items.' },
+          { name: 'Stack Rack', standard: 3300, major: 3300, unit: 'per store', definition: 'A standalone wire rack placed on the floor, typically for bulk items or value packs.' },
+          { name: 'Brand Trans (0.5m) - Yearly Charge', standard: 3570, major: 3570, unit: 'per store', definition: '"Brand Transition" – A vertical divider or branding strip (0.5m) attached to the shelf to separate your brand zone from competitors.' },
+          { name: 'Bus Stop Signage', standard: 2860, major: 2860, unit: 'per store', definition: 'A perpendicular "Aisle Fin" sign that sticks out into the walkway, acting like a street sign for your brand.' },
+          { name: 'Check Up Counter (COC) - 1st shelf per SKU', standard: 396, major: 396, unit: 'per store', definition: 'Prime impulse placement on the top shelf of the checkout counter display.' },
+          { name: 'Check Up Counter (COC) - 2nd shelf per SKU', standard: 290, major: 290, unit: 'per store', definition: 'Placement on the second shelf of the checkout counter display.' },
+          { name: 'Pharmacy Counter (RX Tray) monthly', standard: 2640, major: 2640, unit: 'per store', definition: 'A small display tray located specifically at the Pharmacist\'s counter (for health/supplement products).' },
+        ]
+      },
+      {
+        id: 'o2o',
+        name: 'O+O Campaign',
+        icon: '🎯',
+        items: [
+          { name: 'Platinum (3.3, 6.6, 8.8, 11.11)', standard: 198000, major: 207000, unit: '', definition: 'The highest tier sponsorship package for Mega Sales dates (3.3, 6.6, 8.8, 11.11) with Online + Offline integration.' },
+          { name: 'Gold (3.3, 6.6, 8.8, 11.11)', standard: 105600, major: 110400, unit: '', definition: 'The mid-tier sponsorship package for Mega Sales dates (3.3, 6.6, 8.8, 11.11) with Online + Offline integration.' },
+        ]
+      },
+      {
+        id: 'digital',
+        name: 'Digital / E-Commerce',
+        icon: '💻',
+        items: [
+          { name: 'Gamification (Subject to final alignment, fees from RM18k onwards including adbuy)', standard: 18000, major: 18000, unit: 'per slot', definition: 'A branded interactive game inside the Watsons App to drive engagement and vouchers.' },
+          { name: 'Watsons Super Brand Day', standard: 65000, major: 65000, unit: 'per slot', definition: 'A 24-hour exclusive takeover of the Watsons App homepage dedicated to your brand.' },
+          { name: 'E-MPP', standard: 10000, major: 10000, unit: 'per slot', definition: 'Electronic version of the Mega Promo Platform; flagship visibility on the App/Website.' },
+          { name: 'E-SIDEKICK', standard: 5000, major: 5000, unit: 'per slot', definition: 'Secondary visibility banner on the App/Website.' },
+          { name: 'Brand Activation', standard: 24000, major: 24000, unit: 'per slot', definition: 'Special digital event or landing page launch for a specific campaign.' },
+          { name: 'Main Banner', standard: 12000, major: 12000, unit: 'per slot', definition: 'The large rotating "Hero Banner" at the very top of the Watsons App/Web homepage.' },
+          { name: 'TikTok Live Streaming', standard: 5000, major: 5000, unit: 'per Brand', definition: 'A dedicated live stream session focused exclusively on your brand.' },
+          { name: 'Bottom Carousel Banner', standard: 6000, major: 6000, unit: 'per slot', definition: 'A rotating banner ad located at the bottom of the App/Web homepage.' },
+          { name: 'Category Main Banner', standard: 6000, major: 6000, unit: 'per slot per week', definition: 'The top banner within a specific category page (e.g., "Personal Care" section).' },
+          { name: 'Category Sub Banner', standard: 4800, major: 4800, unit: 'per slot per week', definition: 'A secondary banner within a specific category page.' },
+          { name: 'Brand Page Set Up', standard: 5000, major: 5000, unit: 'per Brand', definition: 'Fee for creating and designing your brand\'s dedicated "Official Store" page within the Watsons platform.' },
+          { name: 'Mobile app push notification (average 30k per blast)', standard: 1800, major: 1800, unit: 'per push', definition: 'A pop-up notification sent directly to users\' smartphones.' },
+          { name: 'Web push notification (average 30k per blast)', standard: 1800, major: 1800, unit: 'per push', definition: 'A browser notification sent to users on desktop/mobile web.' },
+        ]
+      },
+      {
+        id: 'instore-activity',
+        name: 'In-Store Activity',
+        icon: '🎪',
+        items: [
+          { name: 'Single Store booking for max 1 week', standard: '5,000 - 17,000', major: '5,000 - 17,000', unit: '', isRange: true, definition: 'Rental of floor space in a specific store for a short-term event (max 1 week), such as a pop-up booth or consultation table.' },
+        ]
+      },
+    ];
+
+    // State
+    let activeCategory = 'all';
+    let pricingMode = 'standard';
+    let searchQuery = '';
+    let expandedItem = null; // Track currently expanded item
+
+    // DOM elements
+    const navEl = document.getElementById('nav');
+    const contentEl = document.getElementById('content');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const pricingToggle = document.getElementById('pricingToggle');
+    const standardLabel = document.getElementById('standardLabel');
+    const majorLabel = document.getElementById('majorLabel');
+    const searchResults = document.getElementById('searchResults');
+    const searchTerm = document.getElementById('searchTerm');
+    const resultCount = document.getElementById('resultCount');
+    const noResults = document.getElementById('noResults');
+    const noResultsText = document.getElementById('noResultsText');
+    const clearButton = document.getElementById('clearButton');
+    const totalCategories = document.getElementById('totalCategories');
+    const totalItems = document.getElementById('totalItems');
+    const highestPrice = document.getElementById('highestPrice');
+    const highestItem = document.getElementById('highestItem');
+    const lowestPrice = document.getElementById('lowestPrice');
+    const lowestItem = document.getElementById('lowestItem');
+
+    // Format price
+    function formatPrice(price) {
+      if (typeof price === 'string') return `RM ${price}`;
+      if (price < 1) return `RM ${price.toFixed(2)}`;
+      return `RM ${price.toLocaleString()}`;
+    }
+
+    // Normalize string for flexible search (remove spaces and lowercase)
+    function normalizeString(str) {
+      return str.toLowerCase().replace(/\s+/g, '');
+    }
+
+    // Flexible search match
+    function flexibleMatch(itemName, categoryName, query) {
+      const normalizedQuery = normalizeString(query);
+      const normalizedItem = normalizeString(itemName);
+      const normalizedCategory = normalizeString(categoryName);
+      
+      return normalizedItem.includes(normalizedQuery) || 
+             normalizedCategory.includes(normalizedQuery);
+    }
+
+    // Update stats
+    function updateStats() {
+      let highest = { name: '', price: 0 };
+      let lowest = { name: '', price: Infinity };
+      let total = 0;
+
+      categories.forEach(cat => {
+        total += cat.items.length;
+        cat.items.forEach(item => {
+          if (!item.isRange) {
+            const price = pricingMode === 'standard' ? item.standard : item.major;
+            if (typeof price === 'number') {
+              if (price > highest.price) {
+                highest = { name: item.name, price };
+              }
+              if (price < lowest.price && price > 0) {
+                lowest = { name: item.name, price };
+              }
+            }
+          }
+        });
+      });
+
+      totalCategories.textContent = categories.length;
+      totalItems.textContent = total;
+      highestPrice.textContent = formatPrice(highest.price);
+      highestItem.textContent = highest.name.substring(0, 25) + (highest.name.length > 25 ? '...' : '');
+      lowestPrice.textContent = formatPrice(lowest.price);
+      lowestItem.textContent = lowest.name.substring(0, 25) + (lowest.name.length > 25 ? '...' : '');
+    }
+
+    // Render navigation
+    function renderNav() {
+      let html = `
+        <button class="nav-item ${activeCategory === 'all' ? 'active' : ''}" data-category="all">
+          <span class="nav-icon">📊</span>
+          <span>All Categories</span>
+        </button>
+      `;
+
+      categories.forEach(cat => {
+        html += `
+          <button class="nav-item ${activeCategory === cat.id ? 'active' : ''}" data-category="${cat.id}">
+            <span class="nav-icon">${cat.icon}</span>
+            <span>${cat.name}</span>
+            <span class="item-count">${cat.items.length}</span>
+          </button>
+        `;
+      });
+
+      navEl.innerHTML = html;
+
+      // Add click handlers
+      navEl.querySelectorAll('.nav-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCategory = btn.dataset.category;
+          searchQuery = '';
+          searchInput.value = '';
+          expandedItem = null;
+          render();
+        });
+      });
+    }
+
+    // Handle item click for accordion
+    function handleItemClick(itemId) {
+      if (expandedItem === itemId) {
+        expandedItem = null; // Collapse if already expanded
+      } else {
+        expandedItem = itemId; // Expand new item (auto-collapses previous)
+      }
+      renderContent();
+    }
+
+    // Render content
+    function renderContent() {
+      const query = searchQuery.trim();
+      let filteredCategories = [];
+
+      if (query) {
+        filteredCategories = categories.map(cat => ({
+          ...cat,
+          items: cat.items.filter(item => flexibleMatch(item.name, cat.name, query))
+        })).filter(cat => cat.items.length > 0);
+      } else if (activeCategory === 'all') {
+        filteredCategories = categories;
+      } else {
+        filteredCategories = categories.filter(cat => cat.id === activeCategory);
+      }
+
+      // Update search results indicator
+      if (query) {
+        searchResults.classList.add('visible');
+        searchTerm.textContent = searchQuery;
+        const count = filteredCategories.reduce((acc, cat) => acc + cat.items.length, 0);
+        resultCount.textContent = count;
+      } else {
+        searchResults.classList.remove('visible');
+      }
+
+      // Show/hide no results
+      if (filteredCategories.length === 0) {
+        noResults.classList.add('visible');
+        noResultsText.textContent = `No items found for "${searchQuery}"`;
+        contentEl.innerHTML = '';
+        return;
+      } else {
+        noResults.classList.remove('visible');
+      }
+
+      // Build content
+      let html = '';
+      filteredCategories.forEach(cat => {
+        html += `
+          <div class="category-section visible">
+            <div class="category-header">
+              <span class="category-icon">${cat.icon}</span>
+              <h2 class="category-title">${cat.name}</h2>
+              <span class="category-count">${cat.items.length} items</span>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th class="price">${pricingMode === 'standard' ? 'Standard Price' : 'Major Month Price'}</th>
+                    <th class="unit">Unit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${cat.items.map((item, idx) => {
+                    const itemId = `${cat.id}-${idx}`;
+                    const isExpanded = expandedItem === itemId;
+                    return `
+                      <tr class="item-row ${isExpanded ? 'expanded' : ''}" data-item-id="${itemId}">
+                        <td>
+                          <div class="item-name-container">
+                            <span class="expand-arrow ${isExpanded ? 'expanded' : ''}">▶</span>
+                            <div>
+                              <span class="item-name">${item.name}</span>
+                              ${item.note ? `<span class="item-note">${item.note}</span>` : ''}
+                              <div class="item-definition ${isExpanded ? 'visible' : ''}">${item.definition || ''}</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="price">${formatPrice(pricingMode === 'standard' ? item.standard : item.major)}</td>
+                        <td class="unit">${item.unit || '-'}</td>
+                      </tr>
+                    `;
+                  }).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      });
+
+      contentEl.innerHTML = html;
+
+      // Add click handlers to rows
+      contentEl.querySelectorAll('.item-row').forEach(row => {
+        row.addEventListener('click', () => {
+          handleItemClick(row.dataset.itemId);
+        });
+      });
+    }
+
+    // Full render
+    function render() {
+      renderNav();
+      renderContent();
+      updateStats();
+      clearSearch.classList.toggle('visible', searchQuery.length > 0);
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      activeCategory = 'all';
+      expandedItem = null;
+      render();
+    });
+
+    clearSearch.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      expandedItem = null;
+      render();
+    });
+
+    clearButton.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      expandedItem = null;
+      render();
+    });
+
+    pricingToggle.addEventListener('click', () => {
+      pricingMode = pricingMode === 'standard' ? 'major' : 'standard';
+      pricingToggle.classList.toggle('major', pricingMode === 'major');
+      standardLabel.classList.toggle('active', pricingMode === 'standard');
+      majorLabel.classList.toggle('active', pricingMode === 'major');
+      render();
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
